@@ -1,0 +1,220 @@
+openapi: 3.0.3
+info:
+  version: '0.1'
+  title: 'FindYourBook API'
+  description: 'An API that allows clients to obtain existing information of books, authors'
+  contact:
+    name: Boris Kozhuhovskij
+    email: borisgk98@ya.ru
+
+servers:
+  - url: https://api.findyourbook.borisgk.space
+    description: API server
+  - url: http://localhost:8080
+    description: local API server
+
+paths:
+
+  ### Author
+  /author/{author_id}:
+    get:
+      parameters:
+        - name: author_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      description: Get information about author by author id
+      responses:
+        200:
+          description: Successful getting
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Author'
+        404:
+          description: Not found author by this author_id
+
+  /author:
+    get:
+      parameters:
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+      description: Get all authors
+      responses:
+        200:
+          description: Successful getting
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Author'
+        404:
+          description: Not found any authors
+
+  /author/search:
+    get:
+      parameters:
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: query
+          in: query
+          required: true
+          schema:
+            type: string
+      description: Search authors
+      responses:
+        200:
+          description: Successful getting
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Author'
+        404:
+          description: Not found authors
+
+  ### Book
+  /book/{book_id}:
+    get:
+      parameters:
+        - name: book_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      description: Get information about book by book id
+      responses:
+        200:
+          description: Successful getting
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Book'
+        404:
+          description: Not found book by this book_id
+
+  /book:
+    get:
+      parameters:
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+      description: Get all books
+      responses:
+        200:
+          description: Successful getting
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Book'
+        404:
+          description: Not found any books
+
+  /book/search:
+    get:
+      parameters:
+        - name: page
+          in: query
+          required: false
+          schema:
+            type: integer
+        - name: query
+          in: query
+          required: true
+          schema:
+            type: string
+      description: Search books
+      responses:
+        200:
+          description: Successful getting
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Book'
+        404:
+          description: Not found books
+
+
+components:
+  schemas:
+    Author:
+      description: Contains information about authors
+      properties:
+        id:
+          description: id
+          type: integer
+        name:
+          description: Author's name
+          type: string
+        year_birth:
+          description: Author's date of birth
+          type: integer
+        year_death:
+          description: Author's date of death
+          type: integer
+        biography:
+          description: Author's biography
+          type: string
+        img_url:
+          description: Author's img
+          type: string
+        books_ids:
+          description: Author's books
+          type: array
+          items:
+            type: integer
+
+    Book:
+      description: Contains information about books
+      properties:
+        id:
+          type: integer
+        img_url:
+          description: book's cover
+          type: string
+        name:
+          type: string
+        description:
+          description: short description
+          type: string
+        year:
+          type: integer
+        tags:
+          type: array
+          items:
+            type: string
+        genres:
+          type: array
+          items:
+            type: string
+        place_of_events:
+          type: array
+          items:
+            type: string
+        time_of_events:
+          type: array
+          items:
+            type: string
+        protagonists:
+          type: array
+          items:
+            type: string
+        authors:
+          type: array
+          items:
+            $ref: '#/components/schemas/Author'
