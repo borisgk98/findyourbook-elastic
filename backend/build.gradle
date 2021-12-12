@@ -43,6 +43,10 @@ test {
 	useJUnitPlatform()
 }
 
+springBoot {
+    mainClass.set("space.borisgk.findyourbookelastic.FindyourbookElasticApplication")
+}
+
 openApiGenerate {
     generatorName = "spring"
     inputSpec = "$projectDir/src/main/resources/findyourbook.yaml".toString()
