@@ -25,7 +25,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 import java.util.Optional;
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-12-11T17:16:40.444092736+03:00[Europe/Moscow]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-12-13T11:46:42.237920939+03:00[Europe/Moscow]")
 @Validated
 @Api(value = "book", description = "the book API")
 public interface BookApi {
@@ -51,11 +51,11 @@ public interface BookApi {
         value = "/book/{book_id}",
         produces = { "application/json" }
     )
-    default ResponseEntity<Book> bookBookIdGet(@ApiParam(value = "", required = true) @PathVariable("book_id") Integer bookId) {
+    default ResponseEntity<Book> bookBookIdGet(@ApiParam(value = "", required = true) @PathVariable("book_id") String bookId) {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"protagonists\" : [ \"protagonists\", \"protagonists\" ], \"img_url\" : \"img_url\", \"year\" : 6, \"genres\" : [ \"genres\", \"genres\" ], \"place_of_events\" : [ \"place_of_events\", \"place_of_events\" ], \"name\" : \"name\", \"time_of_events\" : [ \"time_of_events\", \"time_of_events\" ], \"description\" : \"description\", \"id\" : 0, \"tags\" : [ \"tags\", \"tags\" ], \"authors\" : [ { \"books_ids\" : [ 5, 5 ], \"img_url\" : \"img_url\", \"name\" : \"name\", \"year_death\" : 1, \"id\" : 0, \"biography\" : \"biography\", \"year_birth\" : 6 }, { \"books_ids\" : [ 5, 5 ], \"img_url\" : \"img_url\", \"name\" : \"name\", \"year_death\" : 1, \"id\" : 0, \"biography\" : \"biography\", \"year_birth\" : 6 } ] }";
+                    String exampleString = "{ \"protagonists\" : [ \"protagonists\", \"protagonists\" ], \"year\" : \"year\", \"genres\" : [ \"genres\", \"genres\" ], \"place_of_events\" : [ \"place_of_events\", \"place_of_events\" ], \"name\" : \"name\", \"time_of_events\" : [ \"time_of_events\", \"time_of_events\" ], \"poster_url\" : \"poster_url\", \"description\" : \"description\", \"id\" : \"id\", \"tags\" : [ \"tags\", \"tags\" ], \"authors\" : [ { \"books_ids\" : [ 1, 1 ], \"name\" : \"name\", \"year_death\" : 6, \"poster_url\" : \"poster_url\", \"id\" : \"id\", \"biography\" : \"biography\", \"year_birth\" : 0 }, { \"books_ids\" : [ 1, 1 ], \"name\" : \"name\", \"year_death\" : 6, \"poster_url\" : \"poster_url\", \"id\" : \"id\", \"biography\" : \"biography\", \"year_birth\" : 0 } ] }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
@@ -87,7 +87,7 @@ public interface BookApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"protagonists\" : [ \"protagonists\", \"protagonists\" ], \"img_url\" : \"img_url\", \"year\" : 6, \"genres\" : [ \"genres\", \"genres\" ], \"place_of_events\" : [ \"place_of_events\", \"place_of_events\" ], \"name\" : \"name\", \"time_of_events\" : [ \"time_of_events\", \"time_of_events\" ], \"description\" : \"description\", \"id\" : 0, \"tags\" : [ \"tags\", \"tags\" ], \"authors\" : [ { \"books_ids\" : [ 5, 5 ], \"img_url\" : \"img_url\", \"name\" : \"name\", \"year_death\" : 1, \"id\" : 0, \"biography\" : \"biography\", \"year_birth\" : 6 }, { \"books_ids\" : [ 5, 5 ], \"img_url\" : \"img_url\", \"name\" : \"name\", \"year_death\" : 1, \"id\" : 0, \"biography\" : \"biography\", \"year_birth\" : 6 } ] }";
+                    String exampleString = "{ \"protagonists\" : [ \"protagonists\", \"protagonists\" ], \"year\" : \"year\", \"genres\" : [ \"genres\", \"genres\" ], \"place_of_events\" : [ \"place_of_events\", \"place_of_events\" ], \"name\" : \"name\", \"time_of_events\" : [ \"time_of_events\", \"time_of_events\" ], \"poster_url\" : \"poster_url\", \"description\" : \"description\", \"id\" : \"id\", \"tags\" : [ \"tags\", \"tags\" ], \"authors\" : [ { \"books_ids\" : [ 1, 1 ], \"name\" : \"name\", \"year_death\" : 6, \"poster_url\" : \"poster_url\", \"id\" : \"id\", \"biography\" : \"biography\", \"year_birth\" : 0 }, { \"books_ids\" : [ 1, 1 ], \"name\" : \"name\", \"year_death\" : 6, \"poster_url\" : \"poster_url\", \"id\" : \"id\", \"biography\" : \"biography\", \"year_birth\" : 0 } ] }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }
@@ -120,7 +120,7 @@ public interface BookApi {
         getRequest().ifPresent(request -> {
             for (MediaType mediaType: MediaType.parseMediaTypes(request.getHeader("Accept"))) {
                 if (mediaType.isCompatibleWith(MediaType.valueOf("application/json"))) {
-                    String exampleString = "{ \"protagonists\" : [ \"protagonists\", \"protagonists\" ], \"img_url\" : \"img_url\", \"year\" : 6, \"genres\" : [ \"genres\", \"genres\" ], \"place_of_events\" : [ \"place_of_events\", \"place_of_events\" ], \"name\" : \"name\", \"time_of_events\" : [ \"time_of_events\", \"time_of_events\" ], \"description\" : \"description\", \"id\" : 0, \"tags\" : [ \"tags\", \"tags\" ], \"authors\" : [ { \"books_ids\" : [ 5, 5 ], \"img_url\" : \"img_url\", \"name\" : \"name\", \"year_death\" : 1, \"id\" : 0, \"biography\" : \"biography\", \"year_birth\" : 6 }, { \"books_ids\" : [ 5, 5 ], \"img_url\" : \"img_url\", \"name\" : \"name\", \"year_death\" : 1, \"id\" : 0, \"biography\" : \"biography\", \"year_birth\" : 6 } ] }";
+                    String exampleString = "{ \"protagonists\" : [ \"protagonists\", \"protagonists\" ], \"year\" : \"year\", \"genres\" : [ \"genres\", \"genres\" ], \"place_of_events\" : [ \"place_of_events\", \"place_of_events\" ], \"name\" : \"name\", \"time_of_events\" : [ \"time_of_events\", \"time_of_events\" ], \"poster_url\" : \"poster_url\", \"description\" : \"description\", \"id\" : \"id\", \"tags\" : [ \"tags\", \"tags\" ], \"authors\" : [ { \"books_ids\" : [ 1, 1 ], \"name\" : \"name\", \"year_death\" : 6, \"poster_url\" : \"poster_url\", \"id\" : \"id\", \"biography\" : \"biography\", \"year_birth\" : 0 }, { \"books_ids\" : [ 1, 1 ], \"name\" : \"name\", \"year_death\" : 6, \"poster_url\" : \"poster_url\", \"id\" : \"id\", \"biography\" : \"biography\", \"year_birth\" : 0 } ] }";
                     ApiUtil.setExampleResponse(request, "application/json", exampleString);
                     break;
                 }

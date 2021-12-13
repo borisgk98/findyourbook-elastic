@@ -13,10 +13,10 @@ import java.util.Objects;
  * Contains information about authors
  */
 @ApiModel(description = "Contains information about authors")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-12-11T17:16:40.444092736+03:00[Europe/Moscow]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-12-13T11:46:42.237920939+03:00[Europe/Moscow]")
 public class Author   {
   @JsonProperty("id")
-  private Integer id;
+  private String id;
 
   @JsonProperty("name")
   private String name;
@@ -30,14 +30,14 @@ public class Author   {
   @JsonProperty("biography")
   private String biography;
 
-  @JsonProperty("img_url")
-  private String imgUrl;
+  @JsonProperty("poster_url")
+  private String posterUrl;
 
   @JsonProperty("books_ids")
   @Valid
   private List<Integer> booksIds = null;
 
-  public Author id(Integer id) {
+  public Author id(String id) {
     this.id = id;
     return this;
   }
@@ -49,11 +49,11 @@ public class Author   {
   @ApiModelProperty(value = "id")
 
 
-  public Integer getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(Integer id) {
+  public void setId(String id) {
     this.id = id;
   }
 
@@ -137,24 +137,24 @@ public class Author   {
     this.biography = biography;
   }
 
-  public Author imgUrl(String imgUrl) {
-    this.imgUrl = imgUrl;
+  public Author posterUrl(String posterUrl) {
+    this.posterUrl = posterUrl;
     return this;
   }
 
   /**
    * Author's img
-   * @return imgUrl
+   * @return posterUrl
   */
   @ApiModelProperty(value = "Author's img")
 
 
-  public String getImgUrl() {
-    return imgUrl;
+  public String getPosterUrl() {
+    return posterUrl;
   }
 
-  public void setImgUrl(String imgUrl) {
-    this.imgUrl = imgUrl;
+  public void setPosterUrl(String posterUrl) {
+    this.posterUrl = posterUrl;
   }
 
   public Author booksIds(List<Integer> booksIds) {
@@ -200,13 +200,13 @@ public class Author   {
         Objects.equals(this.yearBirth, author.yearBirth) &&
         Objects.equals(this.yearDeath, author.yearDeath) &&
         Objects.equals(this.biography, author.biography) &&
-        Objects.equals(this.imgUrl, author.imgUrl) &&
+        Objects.equals(this.posterUrl, author.posterUrl) &&
         Objects.equals(this.booksIds, author.booksIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, yearBirth, yearDeath, biography, imgUrl, booksIds);
+    return Objects.hash(id, name, yearBirth, yearDeath, biography, posterUrl, booksIds);
   }
 
   @Override
@@ -219,7 +219,7 @@ public class Author   {
     sb.append("    yearBirth: ").append(toIndentedString(yearBirth)).append("\n");
     sb.append("    yearDeath: ").append(toIndentedString(yearDeath)).append("\n");
     sb.append("    biography: ").append(toIndentedString(biography)).append("\n");
-    sb.append("    imgUrl: ").append(toIndentedString(imgUrl)).append("\n");
+    sb.append("    posterUrl: ").append(toIndentedString(posterUrl)).append("\n");
     sb.append("    booksIds: ").append(toIndentedString(booksIds)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -71,8 +71,7 @@ module.exports = function book_page_handler(book) {
                 book.description = $('#description-block p').text();
 
                 // изображение-обложка
-                book.poster = {}
-                book.poster.url = URL.resolve(config.url_main, $('div.poster img.poster__img').attr('src'));
+                book.poster_url = URL.resolve(config.url_main, $('div.poster img.poster__img').attr('src'));
 
                 // console.log(book);
                 DAO.write('books', book);

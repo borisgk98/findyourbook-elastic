@@ -5,6 +5,7 @@ const URL = require('url');
 const config = require('./config');
 const book_handler = require('./book_handler');
 const stats = require('./stats');
+const utilz = require('./utilz');
 
 // обработчик страницы со всеми книгами
 module.exports = function main_handler(number_of_page) {
@@ -39,12 +40,14 @@ module.exports = function main_handler(number_of_page) {
             catch (e) {
                 return;
             }
+            book.id = utilz.get_id(book.url)
             try {
                 book.authors = [];
                 author_a = $(this).parent().next().find('a.list-author').each(function (i, el) {
                     author = {};
                     author.name = $(this).text();
                     author.url = URL.resolve(config.url_main, $(this).attr('href'));
+                    author.id = utilz.get_id(author.url)
                     book.authors.push(author);
                 });
                 book_handler(book);

@@ -3,10 +3,17 @@ server:
 
 
 spring:
-    jackson:
+  jackson:
         date-format: space.borisgk.findyourbookelastic.api.invoker.RFC3339DateFormat
         serialization:
             WRITE_DATES_AS_TIMESTAMPS: false
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
+      client:
+        reactive:
+          endpoints: ${ELASTIC_HOST:localhost:9200}
 
 springfox:
     documentation:
@@ -18,3 +25,12 @@ management:
   endpoint:
     prometheus:
       enabled: true
+
+logging:
+  level:
+    org:
+      springframework:
+        data:
+          elasticsearch:
+            core: DEBUG
+    tracer: TRACE

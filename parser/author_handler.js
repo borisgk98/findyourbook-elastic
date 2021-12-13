@@ -28,7 +28,7 @@ module.exports = function(author) {
                 };
 
                 author.biography = $('div.biography p').text();
-                author.img = {url: URL.resolve(config.url_main, $('div.poster img').attr('src'))};
+                author.poster_url = {url: URL.resolve(config.url_main, $('div.poster img').attr('src'))};
 
                 DAO.write('authors', author);
             }

@@ -23,7 +23,7 @@ paths:
           in: path
           required: true
           schema:
-            type: integer
+            type: string
       description: Get information about author by author id
       responses:
         200:
@@ -90,7 +90,7 @@ paths:
           in: path
           required: true
           schema:
-            type: integer
+            type: string
       description: Get information about book by book id
       responses:
         200:
@@ -157,7 +157,7 @@ components:
       properties:
         id:
           description: id
-          type: integer
+          type: string
         name:
           description: Author's name
           type: string
@@ -170,7 +170,7 @@ components:
         biography:
           description: Author's biography
           type: string
-        img_url:
+        poster_url:
           description: Author's img
           type: string
         books_ids:
@@ -183,8 +183,8 @@ components:
       description: Contains information about books
       properties:
         id:
-          type: integer
-        img_url:
+          type: string
+        poster_url:
           description: book's cover
           type: string
         name:
@@ -193,7 +193,7 @@ components:
           description: short description
           type: string
         year:
-          type: integer
+          type: string
         tags:
           type: array
           items:

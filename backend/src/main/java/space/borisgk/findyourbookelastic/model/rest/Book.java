@@ -13,13 +13,13 @@ import java.util.Objects;
  * Contains information about books
  */
 @ApiModel(description = "Contains information about books")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-12-11T17:16:40.444092736+03:00[Europe/Moscow]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2021-12-13T11:46:42.237920939+03:00[Europe/Moscow]")
 public class Book   {
   @JsonProperty("id")
-  private Integer id;
+  private String id;
 
-  @JsonProperty("img_url")
-  private String imgUrl;
+  @JsonProperty("poster_url")
+  private String posterUrl;
 
   @JsonProperty("name")
   private String name;
@@ -28,7 +28,7 @@ public class Book   {
   private String description;
 
   @JsonProperty("year")
-  private Integer year;
+  private String year;
 
   @JsonProperty("tags")
   @Valid
@@ -54,7 +54,7 @@ public class Book   {
   @Valid
   private List<Author> authors = null;
 
-  public Book id(Integer id) {
+  public Book id(String id) {
     this.id = id;
     return this;
   }
@@ -66,32 +66,32 @@ public class Book   {
   @ApiModelProperty(value = "")
 
 
-  public Integer getId() {
+  public String getId() {
     return id;
   }
 
-  public void setId(Integer id) {
+  public void setId(String id) {
     this.id = id;
   }
 
-  public Book imgUrl(String imgUrl) {
-    this.imgUrl = imgUrl;
+  public Book posterUrl(String posterUrl) {
+    this.posterUrl = posterUrl;
     return this;
   }
 
   /**
    * book's cover
-   * @return imgUrl
+   * @return posterUrl
   */
   @ApiModelProperty(value = "book's cover")
 
 
-  public String getImgUrl() {
-    return imgUrl;
+  public String getPosterUrl() {
+    return posterUrl;
   }
 
-  public void setImgUrl(String imgUrl) {
-    this.imgUrl = imgUrl;
+  public void setPosterUrl(String posterUrl) {
+    this.posterUrl = posterUrl;
   }
 
   public Book name(String name) {
@@ -134,7 +134,7 @@ public class Book   {
     this.description = description;
   }
 
-  public Book year(Integer year) {
+  public Book year(String year) {
     this.year = year;
     return this;
   }
@@ -146,11 +146,11 @@ public class Book   {
   @ApiModelProperty(value = "")
 
 
-  public Integer getYear() {
+  public String getYear() {
     return year;
   }
 
-  public void setYear(Integer year) {
+  public void setYear(String year) {
     this.year = year;
   }
 
@@ -334,7 +334,7 @@ public class Book   {
     }
     Book book = (Book) o;
     return Objects.equals(this.id, book.id) &&
-        Objects.equals(this.imgUrl, book.imgUrl) &&
+        Objects.equals(this.posterUrl, book.posterUrl) &&
         Objects.equals(this.name, book.name) &&
         Objects.equals(this.description, book.description) &&
         Objects.equals(this.year, book.year) &&
@@ -348,7 +348,7 @@ public class Book   {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, imgUrl, name, description, year, tags, genres, placeOfEvents, timeOfEvents, protagonists, authors);
+    return Objects.hash(id, posterUrl, name, description, year, tags, genres, placeOfEvents, timeOfEvents, protagonists, authors);
   }
 
   @Override
@@ -357,7 +357,7 @@ public class Book   {
     sb.append("class Book {\n");
     
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    imgUrl: ").append(toIndentedString(imgUrl)).append("\n");
+    sb.append("    posterUrl: ").append(toIndentedString(posterUrl)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    year: ").append(toIndentedString(year)).append("\n");
