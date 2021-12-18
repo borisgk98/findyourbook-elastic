@@ -1,0 +1,12 @@
+version: "3"
+
+services:
+
+  app:
+    image: borisgk98/findyourbook-elastic:0.1.1
+    environment:
+      - ELASTIC_HOST=api.findyourbook.borisgk.space:9200
+      - ELASTIC_PASS=31cdf9df-8bdd-474b-8b3c-fe185bfd68fa
+      - ELASTIC_USERNAME=elastic
+    ports:
+      - 8080:8080

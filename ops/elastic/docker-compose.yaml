@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+
+  elastic:
+    image: elasticsearch:7.14.2
+    environment:
+      - ELASTIC_PASSWORD=31cdf9df-8bdd-474b-8b3c-fe185bfd68fa
+      - ELASTIC_USERNAME=elastic
+    ports:
+      - 9200:9200

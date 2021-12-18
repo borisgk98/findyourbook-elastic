@@ -2,9 +2,11 @@ const config = require('./config');
 
 var elasticsearch = require('elasticsearch');
 var client = new elasticsearch.Client({
-    host: 'localhost:9200',
+    host: 'api.findyourbook.borisgk.space:9200',
     log: 'trace',
-    apiVersion: '7.2', // use the same version of your Elasticsearch instance
+    apiVersion: '7.2', // use the same version of your Elasticsearch instance,
+    username: "elastic",
+    password: "31cdf9df-8bdd-474b-8b3c-fe185bfd68fa"
 });
 
 // await client.indices.create({

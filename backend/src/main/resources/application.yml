@@ -11,9 +11,12 @@ spring:
     elasticsearch:
       repositories:
         enabled: true
-      client:
-        reactive:
-          endpoints: ${ELASTIC_HOST:localhost:9200}
+
+findyourbook:
+  elastic:
+    host: ${ELASTIC_HOST:localhost:9200}
+    password: ${ELASTIC_PASS:}
+    username: ${ELASTIC_USERNAME:}
 
 springfox:
     documentation:
